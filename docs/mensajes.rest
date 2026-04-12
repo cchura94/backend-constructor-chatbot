@@ -1,0 +1,64 @@
+POST http://localhost:3000/api/enviar-mensaje
+Content-Type: application/json
+
+{
+    "numero": "59173277937",
+    "mensaje": {
+        "type": "text",
+        "body": "Hola mensaje de prueba"
+    }
+}
+
+### imagen
+POST http://localhost:3000/api/enviar-mensaje
+Content-Type: application/json
+
+{
+    "numero": "59173277937",
+    "mensaje": {
+        "type": "image",
+        "link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9x871ZfTvwYi-XG_fCxrLHfCimu6KJbZF_w&s",
+        "caption": "saludos este es una imagen"
+    }
+}
+
+### ubicacion
+POST http://localhost:3000/api/enviar-mensaje
+Content-Type: application/json
+
+{
+    "numero": "59173277937",
+    "mensaje": {
+        "type": "location",
+        "latitude": "-16.5",
+        "longitude": "-68.1333",
+        "name": "Zona Contral",
+        "address": "Av 123. Zona ABC"
+    }
+}
+
+### buttons
+POST http://localhost:3000/api/enviar-mensaje
+Content-Type: application/json
+
+{
+    "numero": "59173277937",
+    "mensaje": {
+        "type": "buttons",
+        "body": "Qué rol tienes en desarrollo de software? \nElige una opción:",
+        "buttons": [
+            {
+                "type": "reply",
+                "reply": { "id": 1, "title": "Frontend" }
+            },
+            {
+                "type": "reply",
+                "reply": { "id": 2, "title": "Backend" }
+            },
+            {
+                "type": "reply",
+                "reply": { "id": 3, "title": "Fullstack" }
+            }
+        ]
+    }
+}
