@@ -3,6 +3,8 @@ require('dotenv').config(); // .env
 
 const rutas = require("./routes/index");
 
+const {sequelize} = require("./models");
+
 // Inicializar una app express
 const app = express();
 
@@ -17,6 +19,13 @@ app.get("/", function(req, res){
 
 // habilitar rutas
 app.use("/api", rutas);
+
+
+sequelize.sync({force: false}).then(() => {
+    console.log("Base de datos Mysql Sincronizada");
+}).catch(err => {
+    console.log("Error al sincronizar la base de datos: ", err);
+})
 
 app.listen(PORT, function(){
     console.log("Servicdor corriendo en el puerto: "+PORT);
