@@ -4,3 +4,4 @@ npm install express
 npm install dotenv --save
 npm install --save sequelize
 npm install --save mysql2
+npm install cors

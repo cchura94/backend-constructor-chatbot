@@ -1,0 +1,5 @@
+GET http://localhost:3000/api/bots
+
+###
+
+GET http://localhost:3000/api/chatbot/nodes?botId=1

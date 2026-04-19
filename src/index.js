@@ -1,5 +1,6 @@
 const express = require("express");
 require('dotenv').config(); // .env
+var cors = require('cors')
 
 const rutas = require("./routes/index");
 
@@ -7,6 +8,7 @@ const {sequelize} = require("./models");
 
 // Inicializar una app express
 const app = express();
+app.use(cors())
 
 const PORT = process.env.PORT || 3000;
 
