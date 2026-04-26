@@ -25,6 +25,9 @@ router.get("/webhook", function(req, res){
 
 });
 
+// webhook evolution
+router.post("/webhook-evolution", whatsappController.recibirMensajeWebhookEvolution);
+
 // CRUDS bot
 
 router.get("/bots", botController.getAll);

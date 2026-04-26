@@ -53,6 +53,7 @@ const chatbotController = {
 
     createOption: async (req, res) =>  {
         try {
+            console.log(req.body);
             const opcion = await Option.create(req.body)
             return res.status(201).json(opcion);
         } catch (error) {
